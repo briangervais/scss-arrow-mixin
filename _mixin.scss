@@ -1,0 +1,57 @@
+// Pure CSS Triangles/Arrows
+
+/*
+  Required arguments:
+    1. $direction (choose from: n, ne, e, se, s, sw, w, nw) - Cardinal & Intercardinal Directions
+    2. $size (border-width)
+    3. $color (border-color)
+*/
+
+@mixin arrow($direction, $size, $color) {
+  height: 0;
+  width: 0;
+  border: $size solid transparent;
+
+  // Cardinal Directions
+  @if $direction == "n" {
+    border-top: none;
+    border-bottom-color: $color;
+  }
+  
+  @if $direction == "e" {
+    border-right: none;
+    border-left-color: $color;
+  }
+  
+  @if $direction == "s" {
+    border-bottom: none;
+    border-top-color: $color;
+  }
+  
+  @if $direction == "w" {
+    border-left: none;
+    border-right-color: $color;
+  }
+  
+  // Intercardinal Directions
+  @if $direction == "ne" {
+    border-top-color: $color;
+    border-right-color: $color;
+  }  
+  
+  @if $direction == "se" {
+    border-bottom-color: $color;
+    border-right-color: $color;
+  }  
+  
+  @if $direction == "sw" {
+    border-bottom-color: $color;
+    border-left-color: $color;
+  }
+  
+  @if $direction == "nw" {
+    border-top-color: $color;
+    border-left-color: $color;
+  }  
+  
+}
